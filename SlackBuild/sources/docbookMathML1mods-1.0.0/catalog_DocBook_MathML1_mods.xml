@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD XML Catalogs V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+    <group id="mathml-modules" xml:base="file:///usr/share/xml/docbook/custom/mathml/" prefer="public">
+	<!-- DocBook MathML module v1.1CR1 -->
+	<public publicId="-//OASIS//DTD DocBook MathML Module V1.1CR1//EN" uri="1.1CR1/dbmathml.dtd"/>
+	
+	<!-- DocBook MathML module v1.1b1 -->
+	<public publicId="-//OASIS//DTD DocBook MathML Module V1.1b1//EN" uri="1.1b1/dbmathml.dtd"/>
+
+	<!-- DocBook MathML module v1.0 -->
+	<public publicId="-//OASIS//DTD DocBook MathML Module V1.0//EN" uri="1.0/dbmathml.dtd"/>
+                          
+	<!-- For All DocBook MathML modules -->
+	<rewriteURI uriStartString="http://docbook.org/xml/mathml/" rewritePrefix="./" />
+	<rewriteURI uriStartString="http://www.oasis-open.org/docbook/xml/mathml/" rewritePrefix="./" />
+
+	<rewriteSystem systemIdStartString="http://docbook.org/xml/mathml/" rewritePrefix="./" />
+	<rewriteSystem systemIdStartString="http://www.oasis-open.org/docbook/xml/mathml/" rewritePrefix="./" />
+    </group>
+</catalog>
