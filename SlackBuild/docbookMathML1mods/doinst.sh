@@ -1,6 +1,14 @@
-cd etc/xml/
-cp --archive docbook docbook.mathml1mods_orig
-sed_appended_text='\
-  <!-- Added when "docbook_mathML1_mods" package is installed --> \
-  <nextCatalog catalog="file:///usr/share/xml/docbook/custom/mathml/catalog_DocBook_MathML1_mods.xml" />'
-sed -i "\$i \ $sed_appended_text" docbook
+config() {
+  NEW="$1"
+  OLD="$(dirname $NEW)/$(basename $NEW .new)"
+  # If there's no config file by that name, mv it over:
+  if [ ! -r $OLD ]; then
+    mv $NEW $OLD
+  elif [ "$(cat $OLD | md5sum)" = "$(cat $NEW | md5sum)" ]; then
+    # toss the redundant copy
+    rm $NEW
+  fi
+  # Otherwise, we leave the .new copy for the admin to consider...
+}
+
+config etc/xml/docbook.new
