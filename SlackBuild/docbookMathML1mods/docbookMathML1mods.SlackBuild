@@ -77,15 +77,9 @@ find -L . \
 
 # create installation directory tree for the original files
 mkdir --parents $PKG/usr/share/xml/docbook/custom/
-cp --archive --recursive ./mathml $PKG/usr/share/xml/docbook/custom/mathml
+cp --archive ./mathml $PKG/usr/share/xml/docbook/custom/mathml
 cp --archive $TMP/$PRGNAM-$VERSION/catalog_DocBook_MathML1_mods.xml $PKG/usr/share/xml/docbook/custom/mathml
 cp --archive $TMP/$PRGNAM-$VERSION/catalog_DocBook_MathML1_mods $PKG/usr/share/xml/docbook/custom/mathml
-mkdir --parents $PKG/etc/xml/
-if [ ! -f /var/log/packages/docbook-xml5* ]; then                   # if 'docbook-xml5' was NOT installed
-    cp --archive --recursive ./docbook.new1 $PKG/etc/xml/docbook.new
-else
-    cp --archive --recursive ./docbook.new2 $PKG/etc/xml/docbook.new
-fi
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
