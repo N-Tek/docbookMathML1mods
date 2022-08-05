@@ -1,7 +1,7 @@
-catalog_filepath=/etc/xml/docbook
+catalog_filepath=etc/xml/docbook
 
-if [ ! -e /etc/xml ]; then
-    mkdir -p /etc/xml
+if [ ! -e etc/xml ]; then
+    mkdir -p etc/xml
     xmlcatalog --noout --create $catalog_filepath
 fi
 
@@ -106,7 +106,7 @@ xmlcatalog --noout --add 'nextCatalog' \
   $catalog_filepath
 
 # 'docbook-xml5' package installation check
-if [ -e /var/lib/pkgtools/packages/docbook-xml5* ]; then
+if [ -e var/lib/pkgtools/packages/docbook-xml5* ]; then
     xmlcatalog --noout --del \
       "file:///usr/share/xml/docbook/5.0/catalog_docbook-5.0.0.xml" \
       $catalog_filepath
